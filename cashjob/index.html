@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Werkly - Home</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="app">
+
+    <header class="header">
+        <div class="greeting">
+            <h1>Hi Said! 👋</h1>
+            <p>Vind de perfecte bijbaan die past bij jouw leven.</p>
+        </div>
+        <button class="notification" onclick="showNotification()" aria-label="Meldingen">♧</button>
+    </header>
+
+    <section class="search-container">
+        <input id="search" class="search" type="search"
+               placeholder="Zoek op functie, bedrijf of trefwoord...">
+    </section>
+
+    <section class="filters">
+        <button class="filter" onclick="selectFilter('Locatie')">📍 Locatie⌄</button>
+        <button class="filter" onclick="selectFilter('Soort werk')">💼 Soort werk⌄</button>
+        <button class="filter" onclick="selectFilter('Meer filters')">☷ Meer filters⌄</button>
+    </section>
+
+    <section class="categories">
+        <button class="category active" data-category="Alles"><span class="category-icon">☆</span>Populair</button>
+        <button class="category" data-category="Horeca"><span class="category-icon">☕</span>Horeca</button>
+        <button class="category" data-category="Winkel"><span class="category-icon">🛒</span>Winkel</button>
+        <button class="category" data-category="Zorg"><span class="category-icon">♧</span>Zorg</button>
+        <button class="category" data-category="Kantoor"><span class="category-icon">▣</span>Kantoor</button>
+        <button class="category" data-category="Onderwijs"><span class="category-icon">🎓</span>Onderwijs</button>
+        <button class="category" data-category="Overig"><span class="category-icon">•••</span>Overig</button>
+    </section>
+
+    <section class="section">
+        <div class="section-header">
+            <h2>Populaire vacatures</h2>
+            <button class="view-all" onclick="showAllJobs()">Bekijk alles ›</button>
+        </div>
+
+        <div id="jobs" class="jobs">
+
+            <article class="job" data-category="Horeca"
+                     data-search="barista starbucks nijmegen horeca koffie">
+                <div class="job-image">☕</div>
+                <div class="job-info">
+                    <h3>Barista</h3>
+                    <div class="company">Starbucks · 📍 Nijmegen</div>
+                    <div class="details">◷ 8 - 16 uur p/w · Flexibele uren</div>
+                </div>
+                <button class="heart" onclick="toggleFavorite(this)" aria-label="Vacature opslaan">♡</button>
+                <div class="salary">€ 14,50 - € 16,00<br><small>per uur</small></div>
+            </article>
+
+            <article class="job" data-category="Winkel"
+                     data-search="verkoopmedewerker zara nijmegen winkel kleding">
+                <div class="job-image">🛍️</div>
+                <div class="job-info">
+                    <h3>Verkoopmedewerker</h3>
+                    <div class="company">ZARA · 📍 Nijmegen</div>
+                    <div class="details">◷ 8 - 24 uur p/w · Avond & weekend</div>
+                </div>
+                <button class="heart" onclick="toggleFavorite(this)" aria-label="Vacature opslaan">♡</button>
+                <div class="salary">€ 14,06 - € 15,50<br><small>per uur</small></div>
+            </article>
+
+            <article class="job" data-category="Onderwijs"
+                     data-search="kinderopvang medewerker kinderen nijmegen onderwijs">
+                <div class="job-image">🧸</div>
+                <div class="job-info">
+                    <h3>Medewerker kinderopvang</h3>
+                    <div class="company">Kindergarden · 📍 Nijmegen</div>
+                    <div class="details">◷ 12 - 24 uur p/w · Overdag</div>
+                </div>
+                <button class="heart" onclick="toggleFavorite(this)" aria-label="Vacature opslaan">♡</button>
+                <div class="salary">€ 14,50 - € 16,50<br><small>per uur</small></div>
+            </article>
+
+            <article class="job" data-category="Winkel"
+                     data-search="vakkenvuller albert heijn nijmegen supermarkt winkel">
+                <div class="job-image">🛒</div>
+                <div class="job-info">
+                    <h3>Vakkenvuller</h3>
+                    <div class="company">Albert Heijn · 📍 Nijmegen</div>
+                    <div class="details">◷ 8 - 20 uur p/w · Flexibele uren</div>
+                </div>
+                <button class="heart" onclick="toggleFavorite(this)" aria-label="Vacature opslaan">♡</button>
+                <div class="salary">€ 14,06 - € 15,00<br><small>per uur</small></div>
+            </article>
+
+        </div>
+
+        <div id="noResults" class="no-results">Geen vacatures gevonden.</div>
+    </section>
+
+    <nav class="bottom-navigation">
+        <button class="nav-button active" onclick="navigate('home')"><span class="nav-icon">⌂</span>Home</button>
+        <button class="nav-button" onclick="navigate('vacatures')"><span class="nav-icon">⌕</span>Vacatures</button>
+        <button class="nav-button" onclick="navigate('opgeslagen')"><span class="nav-icon">♡</span>Opgeslagen</button>
+        <button class="nav-button" onclick="navigate('profiel')"><span class="nav-icon">♙</span>Profiel</button>
+    </nav>
+
+</main>
+<script src="script.js"></script>
+</body>
+</html>
